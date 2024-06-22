@@ -23,7 +23,9 @@ public class ArrayUtility {
         // occOfNum(cpArr, l);
         // int[] rotatedArr = reverseArr(arr, l);
         // traverseArr(rotatedArr, l);
-        duplicateEle(arr, l);
+        // duplicateEle(arr, l);
+        int sec = print2largest(arr, l);
+        System.out.println(sec);
     }
 
 // all the funtionality of the array.
@@ -120,5 +122,25 @@ public class ArrayUtility {
         }
 
 
+    }
+    // program to find the second largest number in the array (brute force solution)
+    public static int print2largest(int arr[], int n) {
+        int secLargest = -1 ;
+        for(int pass = n - 1 ; pass > 0 ; pass--){
+            for(int i = 0; i < pass  ; i++){
+                if(arr[i] > arr[i+1]){
+                    int temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+            }
+        }
+        for(int i = n-2 ; i >= 0 ; i--){
+            if(arr[i] != arr[n-1]){
+                secLargest = arr[i];
+                break;
+            }
+        }
+        return secLargest;
     }
 }
