@@ -23,7 +23,6 @@ public class HashingProblem {
             }else count[str[i]]++;
 
         }
-:q
         return 0;
     }
 }
